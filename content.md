@@ -24,12 +24,9 @@ You can download my complete CV [here](CV_ENG.pdf).
 
 ## Teaching
 
-- **Course Name**, Universidad Carlos III de Madrid — Teaching Assistant, 2025–2026
-- **Another Course**, Universidad Carlos III de Madrid — Teaching Assistant, 2024–2025
-
-// ## Code
-
-// - [Project or replication package name](https://github.com/Bohdan-Kalinichenko/your-repo) — one line describing what it does.
+- **Macroeconomics I**, Universidad Carlos III de Madrid — Teaching Assistant, 2023–2026
+- **Dynamic Macroeconomics**, Universidad Carlos III de Madrid — Teaching Assistant, 2021–2022
+- **Principles of Economics**, Universidad Carlos III de Madrid - Teaching Assistant, 2022
 
 ## Contact
 
