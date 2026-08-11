@@ -27,9 +27,9 @@ You can download my complete CV [here](CV_ENG.pdf).
 - **Course Name**, Universidad Carlos III de Madrid — Teaching Assistant, 2025–2026
 - **Another Course**, Universidad Carlos III de Madrid — Teaching Assistant, 2024–2025
 
-## Code
+// ## Code
 
-- [Project or replication package name](https://github.com/Bohdan-Kalinichenko/your-repo) — one line describing what it does.
+// - [Project or replication package name](https://github.com/Bohdan-Kalinichenko/your-repo) — one line describing what it does.
 
 ## Contact
 
