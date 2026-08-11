@@ -77,9 +77,6 @@ img.photo{display:block; height:auto; object-fit:cover}
 .social-links svg{width:22px; height:22px; fill:currentColor; display:block}
 
 /* In-page section nav */
-.section-nav{margin-top:22px; display:flex; flex-wrap:wrap; gap:10px 16px; justify-content:center}
-.section-nav a{font-size:.86rem; font-weight:500; color:var(--muted); text-decoration:none}
-.section-nav a:hover{color:var(--link)}
 
 /* ---------- Content ---------- */
 .right-side p{margin:0 0 16px}
@@ -91,6 +88,8 @@ em{color:var(--muted)}
 .right-side hr{border:0; height:1px; background:var(--rule); margin:24px 0}
 h2{color:var(--h2); font-size:1.25rem; font-weight:500; line-height:1.1; margin:34px 0 14px; scroll-margin-top:24px}
 h3{color:var(--h2); font-size:1.08rem; font-weight:500; line-height:1.2; margin:22px 0 10px}
+h3 a{color:inherit}
+h3 a:hover{color:var(--link); text-decoration:underline}
 .right-side ul{margin:0 0 18px; padding-left:1.2em}
 .right-side li{margin:0 0 8px}
 
@@ -201,15 +200,17 @@ fetch('content.md', { cache: 'no-cache' })
     });
 
     // Each abstract (written as a blockquote in content.md) collapses
-    // behind an "Abstract" button, hidden by default.
-    right.querySelectorAll('blockquote').forEach(function (bq) {
+    // behind an "Abstract" button. The first one (the job market paper)
+    // starts open; every other paper's abstract starts closed.
+    right.querySelectorAll('blockquote').forEach(function (bq, i) {
       bq.classList.add('abstract');
-      bq.setAttribute('hidden', '');
+      var startOpen = (i === 0);
+      if (!startOpen) bq.setAttribute('hidden', '');
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'toggle-abstract';
+      btn.className = 'toggle-abstract' + (startOpen ? ' open' : '');
       btn.textContent = 'Abstract';
-      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-expanded', startOpen ? 'true' : 'false');
       var actions = document.createElement('div');
       actions.className = 'paper-actions';
       actions.appendChild(btn);
