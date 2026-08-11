@@ -1,99 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bohdan Kalinichenko</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bohdan Kalinichenko</title>
+<meta name="description" content="Bohdan Kalinichenko — PhD candidate in Economics at Universidad Carlos III de Madrid. Macroeconomics and housing markets.">
+<meta name="author" content="Bohdan Kalinichenko">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:,">
+<!--
+============================================================
+Bohdan Kalinichenko — academic site
+Plain, light/dark, single static page. Content is loaded from
+content.md, so to update the site you only edit that file.
+Push to main and GitHub Pages rebuilds automatically.
+============================================================
+-->
+<style>
+:root{
+  --bg:#ffffff; --text:#070000; --heading:#222; --h2:#393939;
+  --link:#0B4DA2; --link-hover:#083a7d; --border:#e5e5e5;
+  --muted:#777; --surface:#f4f4f4; --rule:#d4d4d4;
+}
+html.dark{
+  --bg:#14161a; --text:#e8e8e8; --heading:#f2f2f2; --h2:#dcdcdc;
+  --link:#7aa6e0; --link-hover:#a3c2ec; --border:#2b2e34;
+  --muted:#9a9a9a; --surface:#1c1f24; --rule:#2b2e34;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; font-size:clamp(14px, 13px + 0.2vw, 17px)}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:1rem/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Helvetica Neue",Arial,sans-serif;
+  font-weight:400; transition:background .15s ease, color .15s ease;
+}
+/* ---------- Layout ---------- */
+.wrapper{width:min(100% - 5rem, 58rem); margin:0 auto; padding:52px 0 0; position:relative}
+.masthead{text-align:center; position:relative}
+.masthead h1{margin:0 0 6px; font-size:1.9rem; font-weight:500; color:var(--heading); line-height:1.15; letter-spacing:.01em}
+.masthead .tagline{margin:0; color:var(--muted); font-size:.98rem}
+.masthead::after{content:""; display:block; width:120px; height:1px; margin:22px auto 26px; background:var(--rule); border-radius:2px}
+
+.theme-toggle{
+  position:absolute; top:4px; right:0;
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--border); background:transparent; color:var(--link);
+  cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center;
+}
+.theme-toggle:hover{background:var(--surface)}
+
+/* Single column by default; auto-switches to two columns when a photo is present */
+.cols{display:block}
+.right-side{min-width:0; max-width:40rem; margin:0 auto; padding-bottom:60px}
+.cols:has(.photo){display:flex; gap:46px; align-items:flex-start}
+.cols:has(.photo) .left-side{flex:0 0 280px; width:280px; position:sticky; top:40px}
+.cols:has(.photo) .right-side{flex:1 1 auto; max-width:560px; margin:0}
+
+/* ---------- Sidebar: photo ---------- */
+.photo{
+  width:100%; border:1px solid var(--border); border-radius:6px; background:var(--surface);
+}
+img.photo{display:block; height:auto; object-fit:cover}
+
+.contact-links{margin-top:20px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+.contact-links a{
+  display:inline-flex; align-items:center; justify-content:center; gap:.4ch;
+  min-width:44px; height:40px; padding:0 12px;
+  font-size:15px; font-weight:500; color:var(--link); text-decoration:none;
+  border:1px solid var(--border); border-radius:5px;
+}
+.contact-links a:hover{background:var(--surface); color:var(--link-hover)}
+
+.social-links{margin-top:18px; display:flex; gap:18px; justify-content:center}
+.social-links a{color:var(--link); display:inline-flex; line-height:0}
+.social-links a:hover{color:var(--link-hover)}
+.social-links svg{width:22px; height:22px; fill:currentColor; display:block}
+
+/* In-page section nav */
+.section-nav{margin-top:22px; display:flex; flex-wrap:wrap; gap:10px 16px; justify-content:center}
+.section-nav a{font-size:.86rem; font-weight:500; color:var(--muted); text-decoration:none}
+.section-nav a:hover{color:var(--link)}
+
+/* ---------- Content ---------- */
+.right-side p{margin:0 0 16px}
+a{color:var(--link); text-decoration:none}
+a:hover{color:var(--link-hover)}
+a:focus-visible{outline:2px solid var(--link); outline-offset:2px; border-radius:2px}
+strong{font-weight:500; color:var(--heading)}
+em{color:var(--muted)}
+.right-side hr{border:0; height:1px; background:var(--rule); margin:24px 0}
+h2{color:var(--h2); font-size:1.25rem; font-weight:500; line-height:1.1; margin:34px 0 14px; scroll-margin-top:24px}
+h3{color:var(--h2); font-size:1.08rem; font-weight:500; line-height:1.2; margin:22px 0 10px}
+.right-side ul{margin:0 0 18px; padding-left:1.2em}
+.right-side li{margin:0 0 8px}
+
+/* ---------- Paper action buttons + collapsible abstract ---------- */
+.right-side [hidden]{display:none}
+.paper-actions{display:flex; flex-wrap:wrap; gap:8px; margin:2px 0 16px}
+.toggle-abstract, .paper-actions .btn{
+  font:inherit; font-size:.82rem; font-weight:500; line-height:1.3;
+  color:var(--link); background:transparent; cursor:pointer;
+  border:1px solid var(--border); border-radius:5px; padding:4px 12px;
+  display:inline-flex; align-items:center; gap:.45ch; text-decoration:none;
+}
+.toggle-abstract:hover, .paper-actions .btn:hover{background:var(--surface); color:var(--link-hover)}
+.toggle-abstract::after{content:"\25B8"; display:inline-block; transition:transform .15s ease}
+.toggle-abstract.open::after{transform:rotate(90deg)}
+.abstract{margin:0 0 18px; padding:12px 14px; background:var(--surface); border:1px solid var(--border); border-radius:6px; color:var(--text)}
+.abstract p{margin:0}
+
+.right-side footer{margin-top:40px; padding-top:18px; border-top:1px solid var(--rule); color:var(--muted); font-size:.85rem}
+
+/* ---------- Responsive ---------- */
+@media (max-width:760px){
+  .wrapper{width:min(100% - 40px, 920px); padding-top:40px}
+  .cols:has(.photo){flex-direction:column; gap:26px}
+  .cols:has(.photo) .left-side{flex:none; width:100%; max-width:280px; margin:0 auto; position:static}
+  .cols:has(.photo) .right-side{max-width:none}
+  .theme-toggle{position:static; margin:0 auto 18px; display:flex}
+}
+</style>
 </head>
 <body>
+<div class="wrapper">
 
-  <!-- NAV -->
-  <header class="topbar">
-    <nav class="nav">
-      <div class="nav-right">
-    <a href="index.html">Home</a>
-    <a href="CV_BK.pdf">CV</a>
-    <a href="research.html">Research</a>
-    <a href="teaching.html">Teaching</a>
-    <a href="code.html">Codes</a>
-  <button id="themeToggle" class="iconbtn" aria-label="Toggle dark mode" title="Toggle theme">
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
     <span id="themeIcon" aria-hidden="true">🌙</span>
   </button>
-      </div>
-    </nav>
+
+  <header class="masthead">
+    <h1 id="site-name">Bohdan Kalinichenko</h1>
+    <p class="tagline" id="site-tagline"></p>
   </header>
 
-  <!-- MAIN -->
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero-text">
-        <h1 class="name">Bohdan Kalinichenko</h1>
-        <p class="welcome">Welcome to my website!</p>
-
-        <p>
-          I am a PhD candidate in Economics at <strong>Universidad Carlos III de Madrid</strong>.
-          My research focuses on the relation between Macreconomics and the housing markets. 
-        </p>
-
-        <p>
-          You can download my complete CV <a href="CV_BK.pdf" target="_blank" rel="noopener">here</a>.
-        </p>
-
-        <p>
-          I will be on the <strong>2026 / 2027</strong> academic job market.
-        </p>
+  <div class="cols">
+    <!-- LEFT: photo (filled from the first image in content.md) -->
+    <aside class="left-side">
+      <!-- The profile photo is inserted here from the first image in content.md. -->
+      <div class="social-links">
+        <a href="https://github.com/Bohdan-Kalinichenko" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="mailto:bkalinic@eco.uc3m.es" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/YOUR-LINKEDIN-HANDLE" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
       </div>
+      <nav class="section-nav">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#code">Code</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </aside>
 
-      <div class="hero-photo">
-        <img src="profileBK.jpeg" alt="Bohdan Kalinichenko" />
-      </div>
-    </section>
+    <!-- RIGHT: main content (filled from content.md) -->
+    <main class="right-side">
+      <p>Loading…</p>
+    </main>
+  </div>
+</div>
 
-    <!-- Center mail icon -->
-    <div class="mail">
-      <a class="mailbtn" href="mailto:bkalinic@eco.uc3m.es" aria-label="Email Bohdan">
-        ✉️
-      </a>
-    </div>
+<script src="assets/marked.min.js"></script>
+<script>
+marked.setOptions({ gfm: true, breaks: false });
 
-    <footer class="footer">
-      © <span id="year"></span> Bohdan Kalinichenko. Last updated: January 27, 2026.
-    </footer>
-  </main>
+fetch('content.md', { cache: 'no-cache' })
+  .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+  .then(function (md) {
+    var temp = document.createElement('div');
+    temp.innerHTML = marked.parse(md);
 
-  <script>
-    // footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // theme toggle with persistence
-    const root = document.documentElement;
-    const btn = document.getElementById("themeToggle");
-    const icon = document.getElementById("themeIcon");
-
-    function setTheme(theme) {
-      if (theme === "dark") {
-        root.classList.add("dark");
-        icon.textContent = "☀️";
-      } else {
-        root.classList.remove("dark");
-        icon.textContent = "🌙";
-      }
-      localStorage.setItem("theme", theme);
+    // First heading becomes the centered masthead name.
+    var h1 = temp.querySelector('h1');
+    if (h1) {
+      var name = h1.textContent.trim();
+      document.getElementById('site-name').textContent = name;
+      document.title = name;
+      h1.remove();
     }
 
-    // initialize theme
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setTheme(saved ? saved : (prefersDark ? "dark" : "light"));
+    // First paragraph right after (short tagline) can be pulled out if it's an <em> line.
+    var firstP = temp.querySelector('p');
+    if (firstP && firstP.querySelector('em') && firstP.children.length === 1) {
+      document.getElementById('site-tagline').textContent = firstP.textContent.trim();
+      firstP.remove();
+    }
 
-    btn.addEventListener("click", () => {
-      const isDark = root.classList.contains("dark");
-      setTheme(isDark ? "light" : "dark");
+    // First image becomes the sidebar photo.
+    var img = temp.querySelector('img');
+    if (img) {
+      var wrap = img.closest('p');
+      img.classList.add('photo');
+      document.querySelector('.left-side').insertBefore(img, document.querySelector('.left-side').firstChild);
+      if (wrap && !wrap.textContent.trim() && !wrap.querySelector('img')) wrap.remove();
+    }
+
+    // Turn "## Section Name" headings into anchors matching the nav (#about, #research, ...)
+    var right = document.querySelector('.right-side');
+    right.innerHTML = temp.innerHTML;
+    right.querySelectorAll('h2').forEach(function (h) {
+      var id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      h.id = id;
     });
-  </script>
 
-</body>
-</html>
+    // Each abstract (written as a blockquote in content.md) collapses
+    // behind an "Abstract" button, hidden by default.
+    right.querySelectorAll('blockquote').forEach(function (bq) {
+      bq.classList.add('abstract');
+      bq.setAttribute('hidden', '');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'toggle-abstract';
+      btn.textContent = 'Abstract';
+      btn.setAttribute('aria-expanded', 'false');
+      var actions = document.createElement('div');
+      actions.className = 'paper-actions';
+      actions.appendChild(btn);
+      bq.parentNode.insertBefore(actions, bq);
+      btn.addEventListener('click', function () {
+        var hidden = bq.hasAttribute('hidden');
+        if (hidden) {
+          bq.removeAttribute('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.classList.add('open');
+        } else {
+          bq.setAttribute('hidden', '');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.classList.remove('open');
+        }
+      });
+    });
+  })
+  .catch(function (err) {
+    console.error(err);
+    document.querySelector('.right-side').innerHTML =
+      '<p>Could not load <code>content.md</code>. If you opened this file directly from disk, ' +
+      'run a local web server (see <code>README.md</code>). On GitHub Pages it works automatically.</p>';
+  });
+
+// ---------- Dark mode toggle (persisted) ----------
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  var icon = document.getElementById('themeIcon');
+
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      icon.textContent = '☀️';
+    } else {
+      root.classList.remove('dark');
+      icon.textContent = '🌙';
+    }
+    localStorage.setItem('theme', theme);
+  }
+
+  var saved = localStorage.getItem('theme');
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(saved ? saved : (prefersDark ? 'dark' : 'light'));
+
+  btn.addEventListener('click', function () {
+    var isDark = root.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
+  });
+})();
+</script>
 </body>
 </html>
