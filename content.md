@@ -3,11 +3,13 @@
 # Bohdan Kalinichenko
 Welcome to my website!
 I am a PhD candidate in Economics at **Universidad Carlos III de Madrid**. My research focuses on the relation between macroeconomics and housing markets.
-![Bohdan Kalinichenko](profileBK.jpeg)
+
 
 I will be on the **2026 / 2027** academic job market.
 
 You can download my complete CV [here](CV_ENG.pdf).
+
+![Bohdan Kalinichenko](profileBK.jpeg)
 
 ## Research
 
