@@ -1,22 +1,21 @@
-
+![Bohdan Kalinichenko](profileBK.jpeg)
 
 # Bohdan Kalinichenko
-Welcome to my website!
-I am a PhD candidate in Economics at **Universidad Carlos III de Madrid**. My research focuses on the relation between macroeconomics and housing markets.
 
+*PhD Candidate in Economics, Universidad Carlos III de Madrid*
+
+Welcome to my website! I am a PhD candidate in Economics at **Universidad Carlos III de Madrid**. My research focuses on the relation between macroeconomics and housing markets.
 
 I will be on the **2026 / 2027** academic job market.
 
 You can download my complete CV [here](CV_ENG.pdf).
 
-![Bohdan Kalinichenko](profileBK.jpeg)
-
 ## Research
 
-### Job Market Paper: Who holds the keys? Landlord heterogeinety in Atomistic Rental Markets
+### Job Market Paper: Who holds the keys? Landlord heterogeneity in Atomistic Rental Markets
 *Draft coming soon!*
-<!-- ### Job Market Paper: [Who holds the keys? Landlord heterogenety in Atomistic Rental Markets](paper1.pdf) -->
-> Who supplies long-term rental housing when rental supply is atomistic? I study this question in Spain, where long-term rental supply is provided mainly by households and is dispersed across many small landlords. Landlords are positively selected relative to non-landlords: they are older, higher-income, and wealthier. Yet within the landlord sector, long-term rental supply is not concentrated among households with the highest income outside rents. I show that rental dependence -the share of household income coming from long-term rents -identifies a distinct group of rent-reliant suppliers. High-dependence landlords have low income outside rents, supply a disproportionate share of rental properties and rental income, and are more persistent suppliers. Income records over time show that they also have weaker and flatter work-related income profiles. These facts motivate a model of household landlord formation in which rental supply depends on savings, collateral constraints, and the time cost of rental management.
+<!-- ### Job Market Paper: [Who holds the keys? Landlord heterogeneity in Atomistic Rental Markets](paper1.pdf) -->
+> Who supplies long-term rental housing when rental supply is atomistic? I study this question in Spain, where long-term rental supply is provided mainly by households and is dispersed across many small landlords. Landlords are positively selected relative to non-landlords: they are older, higher-income, and wealthier. Yet within the landlord sector, long-term rental supply is not concentrated among households with the highest income outside rents. I show that rental dependence—the share of household income coming from long-term rents—identifies a distinct group of rent-reliant suppliers. High-dependence landlords have low income outside rents, supply a disproportionate share of rental properties and rental income, and are more persistent suppliers. Income records over time show that they also have weaker and flatter work-related income profiles. These facts motivate a model of household landlord formation in which rental supply depends on savings, collateral constraints, and the time cost of rental management.
 
 ### Working Paper: [Efficiency and Redistributive Effects of Progressive Housing Taxation](HousingTaxation_Draft.pdf)
 Joint with [Anastasis Koufakis](https://anastasiskf.github.io/)
