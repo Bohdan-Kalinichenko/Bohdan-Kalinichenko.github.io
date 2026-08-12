@@ -6,7 +6,7 @@
 
 Welcome to my website! I am a PhD candidate in Economics at **Universidad Carlos III de Madrid**. 
 
-I am a macroeconomist interested whose research focuses on the interrelation between housing markets and fiscal policy.  
+My research lies at the intersection of macroeconomics, housing, and public finance. I study how fiscal policy shapes housing decisions, including homeownership, rental supply, and investment in real estate, and how these decisions in turn affect housing prices, capital accumulation, redistribution, and welfare.
 
 I will be on the **2026 / 2027** academic job market.
 
