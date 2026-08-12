@@ -4,7 +4,9 @@
 
 *PhD Candidate in Economics, Universidad Carlos III de Madrid*
 
-Welcome to my website! I am a PhD candidate in Economics at **Universidad Carlos III de Madrid**. My research focuses on the relation between macroeconomics and housing markets.
+Welcome to my website! I am a PhD candidate in Economics at **Universidad Carlos III de Madrid**. 
+
+I am a macroeconomist interested whose research focuses on the interrelation between housing markets and fiscal policy.  
 
 I will be on the **2026 / 2027** academic job market.
 
